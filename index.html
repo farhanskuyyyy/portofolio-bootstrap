@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- my style  -->
     <link rel="stylesheet" href="style.css" />
     <title>Portfolio</title>
   </head>
@@ -43,9 +46,9 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center" id="home">
-      <img src="img/profile.png" class="rounded-circle img-thumbnail" alt="Farhan Arfianto" width="200" />
-      <h1 class="display-4">Farhan Arfianto</h1>
-      <p class="lead">Student | Software Developer</p>
+      <img src="img/profile.png" class="rounded-circle img-thumbnail" alt="Farhan Arfianto" width="200"/>
+      <h1 class="display-4 nama-home">Farhan Arfianto</h1>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#fff"
@@ -57,18 +60,18 @@
     <!-- End Jumbotron -->
 
     <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-3">
+    <section id="about" >
+      <div class="container" >
+        <div class="row text-center mb-3" >
           <div class="col">
             <h1>About Me</h1>
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="400">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id qui modi optio harum! Animi facere amet magnam quaerat aut ut deleniti? Libero, modi. Magnam, magni nobis assumenda est accusantium mollitia?</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4"  data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id qui modi optio harum! Animi facere amet magnam quaerat aut ut deleniti? Libero, modi. Magnam, magni nobis assumenda est accusantium mollitia?</p>
           </div>
         </div>
@@ -92,7 +95,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" data-aos="fade-down-right" data-aos-duration="500" data-aos-offset="400">
             <div class="card">
               <img src="img/project1.jpg" class="card-img-top" alt="Project" />
               <div class="card-body">
@@ -100,7 +103,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" data-aos="fade-down-right" data-aos-duration="500" data-aos-offset="400" data-aos-delay="500">
             <div class="card">
               <img src="img/project2.jpg" class="card-img-top" alt="Project" />
               <div class="card-body">
@@ -108,7 +111,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" data-aos="fade-down-right" data-aos-duration="500" data-aos-offset="400" data-aos-delay="1000">
             <div class="card">
               <img src="img/project3.jpg" class="card-img-top" alt="Project" />
               <div class="card-body">
@@ -130,7 +133,7 @@
 
     <!-- Contact -->
     <section id="contact">
-      <div class="container">
+      <div class="container" >
         <div class="row text-center mb-3">
           <div class="col">
             <h1>Contact Me</h1>
@@ -142,7 +145,7 @@
               <strong>Terima Kasih!</strong> Pesan Sudah Anda Terkirim.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form name="portfolio-contact-form">
+            <form name="portfolio-contact-form" data-aos="fade-down" data-aos-duration="1000" data-aos-offset="400">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
@@ -183,6 +186,49 @@
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+    <script>
+      AOS.init({
+        once:true
+      });
+      </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.from('.jumbotron img',{
+        duration : 1,
+        y : -100,
+        opacity : 0,
+        ease : 'back'
+      });
+
+      gsap.from('.navbar',{
+        duration : 1.5,
+        y : '-100%',
+        opacity : 0,
+        ease : 'bounce'
+      });
+
+      gsap.from('.nama-home',{
+        duration : 1,
+        y : -100,
+        opacity : 0,
+        ease : 'back'
+      });
+
+      gsap.to('.lead',{
+        duration : 2,
+        delay : 1.5,
+        text : 'Student | Software Developer'
+      })
+    </script>
+
     <!-- google sheet -->
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwh4yHZ3QyEFUEnzIUVUW0cYRUi1bniNa6V4TuHibNl591mZMs-x8Mo9_sqRES1RbawKQ/exec'
