@@ -10,3 +10,10 @@
 section {
   padding-top: 5rem;
 }
+
+@media screen and (max-width: 480px) {
+  .navbar
+   {
+    position: relative;
+   }
+ }
